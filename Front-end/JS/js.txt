@@ -1,0 +1,231 @@
+const - constante
+var - variável com escopo global
+let - variável com escopo local
+
+const media = 5;
+
+undefined
+
+media
+5
+media =10;
+
+VM185:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:7
+(anonymous) @ VM185:1
+
+let n1 =8;
+
+undefined
+let 
+n2 = 5;
+
+undefined
+let 
+n = (n1+n2)/2;
+
+undefined
+n
+6.5
+
+if(n > media) console.log("Aprovado");
+
+VM572:1 
+Aprovado
+
+undefined
+
+for( let i = 0; i < 10; i++) console.log(i);
+
+VM727:1 0
+VM727:1 1
+VM727:1 2
+VM727:1 3
+VM727:1 4
+VM727:1 5
+VM727:1 6
+VM727:1 7
+VM727:1 8
+VM727:1 9
+
+undefined
+
+let nome "Fulano";
+
+VM775:1 Uncaught SyntaxError: Unexpected string
+let nome = "Fulano";
+
+undefined
+
+console.log(novavar)
+
+VM874:1 Uncaught ReferenceError: novavar is not defined
+    at <anonymous>:1:13
+(anonymous) @ VM874:1
+
+console.log(nome);
+VM931:1 Fulano
+undefined
+
+typeof(nome);
+'string'
+
+typeof(n1);
+'number'
+
+typeof(true);
+'boolean'
+
+while( i < 10 ) console.log(i);
+
+VM1098:1 Uncaught ReferenceError: i is not defined
+    at <anonymous>:1:10
+(anonymous) @ VM1098:1
+
+var i=0;
+
+undefined
+
+for( i = 0; i < 5; i++) console.log(i);
+
+VM1204:1 0
+VM1204:1 1
+VM1204:1 2
+VM1204:1 3
+VM1204:1 4
+
+undefined
+
+while( i < 5 ) console.log(i);
+
+undefined
+let arr = [1,5,6,10];
+
+undefined
+
+arr
+(4) [1, 5, 6, 10]
+
+forEach( int i : arr)
+ X
+VM1377:1 Uncaught SyntaxError: missing ) after argument list
+
+function somar(){}
+
+undefined
+
+function somar(v1, v2) { return v1+v2; } 
+
+undefined
+
+somar(5, 3);
+
+8
+
+() => {}
+
+() => {}
+
+parametro => {}
+
+parametro => {}
+
+val => {}
+
+val => {}
+
+(v1, v2, v3) => {}
+
+(v1, v2, v3) => {}
+arr.forEach((val, indice) => { console.log(val, indice)});
+
+1 0
+5 1
+
+6 2
+
+10 3
+
+undefined
+arr.forEach(val => { console.log(val); });
+1
+5
+6
+10
+undefined
+"O aluno " + nome
+
+'O aluno Fulano'
+
+`O aluno ${nome}`
+
+'O aluno Fulano'
+
+`O aluno ${nome} disse: "Oi"`
+
+'O aluno Fulano disse: "Oi"'
+
+let data = new Date();
+
+undefined
+data
+
+Wed Jul 20 2022 07:48:56 GMT-0300 (GMT-03:00)
+data.getFullYear();
+
+2022
+
+data.getDay();
+
+3
+
+data.getDate();
+
+20
+
+data.getTime();
+
+1658314136632
+
+data.getMonth();
+
+6
+
+data.getMonth()+1;
+
+7
+let num = 1.758432;
+
+undefined
+
+num
+1.758432
+
+num.toFixed(2);
+
+'1.76'
+Number(num.toFixed(2));
+
+1.76
+"Fulano da Silva".split(" ");
+
+(3) ['Fulano', 'da', 'Silva']
+"R$ 30.50".substring(3); 
+
+'30.50'
+real.indexOf(".");
+
+5
+
+real.indexOf("R");
+
+0
+
+real.indexOf("3");
+
+3
+real.substring(3, real.indexOf("."));
+
+'30'
+
+window -> [location history document]

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body style="background-color: black; font-family: Arial, Helvetica, sans-serif;">
+    <!-- placa -->
+    <h3 style="color: white;">Placa: </h3>
+    <input type="text" id="placa"  placeholder="ABC1212 - ABC1B12">
+    <button onClick="validarPlaca()"><img src="lupa.png" style="width: 10px;"></button>
+    <p id="valPlaca"></p>
+
+    <!-- validos -->
+    <h3 style="color: white;">CPF válido: </h3>
+    <input type="text" id="cpf" placeholder="123.456.789-12">
+    <button onClick="validaCPF()"><img src="lupa.png" style="width: 10px;"></button>
+    <p id="valCpf"></p>
+
+    <!-- telefone -->
+    <h3 style="color: white;">Telefones: </h3>
+    <input type="text" placeholder="ddd" id="dd" style="width: 25px;">
+    <input type="text" placeholder="Quantidade de telefones" id="quantia">
+    <button onClick="geraTelefones()">Gerar</button>
+    <p id="valTel" style="background-color: white; width: 200px;"></p>
+
+    <!-- aleatorio -->
+    <h3 style="color: white;">CPF aleatório: </h3>
+    <input type="text" id="quanto" placeholder="Quantidade de CPFs">
+    <button onClick="cpfAleatorio()">Gerar</button>
+    <p id="input" style="background-color: white; width: 200px;"></p>
+
+</body>
+<script src="script.js"></script>
+
+</html>
