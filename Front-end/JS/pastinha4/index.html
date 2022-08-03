@@ -13,19 +13,19 @@
     <main>
         <!-- placa -->
         <div id="c">
-            <h3>Digite a placa de um veiculo: </h3>
-            <input type="text" id="placa" placeholder="Placa">
-            <button onClick="validarPlaca()">Validar</button>
-            <div id="valPlaca"></div>
+            <h3>Placa: </h3>
+            <input type="text" id="placa">
+            <button id="btValidaPlaca" onClick="ex1()">Validar Placa</button>
+            <h2 id="retorno"></h2>
         </div>
 
 
         <!-- validos -->
         <div id="c">
             <h3>CPF válido: </h3>
-            <input type="text" id="cpf" placeholder="CPF">
-            <button onClick="validaCPF()">Validar</button>
-            <div id="valCpf"></div>
+            <input type="text" id="cpf">
+            <button id="btValidaCpf" onClick="ex2()">Validar CPF</button>
+            <h2 id="retornoCpf"></h2>
         </div>
 
 
@@ -36,8 +36,8 @@
                 <input type="text" placeholder="DDD" id="dd">
                 <input type="text" placeholder="0" id="quantia">
             </div>
-            <button onClick="geraTelefones()">Criar</button>
-            <div id="valTel"></div>
+            <button onClick="geraTelefones()">Gerar telefones</button>
+            <h2 id="valTel"></h2>
             <p></p>
         </div>
 
