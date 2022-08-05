@@ -1,0 +1,21 @@
+importar
+y arn
+npm
+
+1-instalar node
+2-criar pasta
+3-vscode:cmd
+A.npm init
+B.instalar primeira dependência(express)
+
+
+servidor do node --> V8
+servidor do php --> apache
+servidor java --> apache tom cast
+
+akita - heroku
+
+
+localhost:(number)/arquivo
+
+json = ati
