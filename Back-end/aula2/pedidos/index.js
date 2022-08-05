@@ -15,12 +15,12 @@ app.get('/pedidos', (req, res) => {
     let priNome = req.query.priNome;
     let sobrenome = req.query.sobrenome;
     let endereco = req.query.endereco;
-    let telefone = req.query.telefone;
+    let telefones = req.query.telefones;
     // update pedidos;
     // where nome = req.params.priNome;
     // set id = req.params.id;
     let string = `insert into clientes value(null,'${priNome}','${sobrenome}','${endereco}')`;
-    let string2 = `insert into telefones value(7,'${telefone}')`;
+    let string2 = `insert into telefones value(7,'${telefones}')`;
     con.query(string2, (err, result) => {
         if (err == null) {
             res.json("Dados recebidos com sucesso e enviando para o nosso Banco de Dados");
