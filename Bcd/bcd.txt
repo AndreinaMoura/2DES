@@ -1,0 +1,15 @@
+tipos de dados:
+não estruturado (não possui uma norma específica)
+semi estruturado (possui normas flexíveis)
+estruturado (possui norma rígida)
+
+relacional/não relacional
+	
+	-DDL desenvolvimento (create, alterate, drop, show)
+	-DML manipulação (insert, update, delete, select)
+sql{	-DQL pesquisa/query (select)
+	-DCL controle de acesso ()
+	-DTL transação
+	
+	
+	
