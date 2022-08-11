@@ -12,4 +12,16 @@ sql{	-DQL pesquisa/query (select)
 	-DTL transação
 	
 	
-	
+SGBD (sistema gerenciador de banco de dados):
+mongoDB - estruturado, NoSQL,relacional
+mariaDB - estruturado, SQL,relacional
+oracle - estruturado, SQL,relacional
+SQL-Server -estruturado, SQL,relacional
+firebase - estruturado, SQL, não relacional
+
+client - cliente
+customer - freguês
+
+.xml é tipo html com bd (é lindo)
+
+normalização (BD - estruturado, SQL e relacionais)
