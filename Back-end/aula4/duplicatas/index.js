@@ -10,7 +10,7 @@ const con = mysql.createConnection({
     database: 'duplicatas'
 });
 
-app.get('/duplicatas',(req,res)=>{
+app.get('/duplicatas/clientes',(req,res)=>{
     let string = "select * from vw_clientes";
     con.query(string,(err,result)=>{
         if(err == null){
@@ -19,7 +19,7 @@ app.get('/duplicatas',(req,res)=>{
     });
 });
 
-app.get('/duplicatas',(req,res)=>{
+app.get('/duplicatas/duplicatas',(req,res)=>{
     let string = "select * from duplicatas";
     con.query(string,(err,result)=>{
         if(err == null){
