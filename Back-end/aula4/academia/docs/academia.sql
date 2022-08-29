@@ -10,7 +10,7 @@ create table telefones(
 create table alunos(
     id_aluno integer not null primary key auto_increment,
     nome varchar(50) not null,
-    nascimento date not null,
+    nascimento varchar(10) not null,
     sexo varchar(1) not null,
     peso float(5,2)
 );
