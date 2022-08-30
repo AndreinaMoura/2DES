@@ -40,6 +40,19 @@ app.post("/produtos", (req, res) => {
     })
 });
 
+app.get("/produtos/:cod", (req, res) => {
+
+    let query = `select * from produtos where cod = '${req.params.cod}'`;
+
+    conDB.query(query, (err, result) => {
+        if (err == null) {
+            res.status(200).json(req.params).end();
+        } else {
+            res.status(400).json(err).end();
+        }
+    })
+});
+
 app.listen(3000, () => {
     console.log("App ON");
 })
