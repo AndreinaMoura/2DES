@@ -37,7 +37,7 @@ function alunos() {
         })
 }
 
-function fichas() {
+function aparelhos() {
     fetch('http://localhost:5000/academia/aparelhos')
         .then(response => {
             return response.json();
@@ -76,7 +76,7 @@ function fichas() {
         })
 }
 
-function aparelhos() {
+function exercicios() {
     fetch('http://localhost:5000/academia/exercicios')
         .then(response => {
             return response.json();
@@ -115,7 +115,7 @@ function aparelhos() {
         })
 }
 
-function exercicios() {
+function fichas() {
     fetch('http://localhost:5000/academia/fichas')
         .then(response => {
             return response.json();

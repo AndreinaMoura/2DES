@@ -113,3 +113,4 @@ e o lógico mais perto do desenvolvimento
 ferramentas case fazem: gerar modelo lógico/sql
 
 
+npm i express cors mysql
