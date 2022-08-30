@@ -27,13 +27,13 @@ app.get("/produtos", (req, res) => {
 app.post("/produtos", (req, res) => {
     //req.query é o dado que vem atraves da url => http://localhost:3000/produtos?cod=CJ1234
     //req.params é o dado que vem atraves da url => http://localhost:3000/produtos/CJ1234/teste => "/produtos/:cod/:nome"
-    console.log(req.body);
+    // console.log(req.body);
 
-    let query = `INSERT INTO produtos VALUES (DEFAULT, '${req.body.cod}', '${req.body.nome}',${req.body.qntd} ,${req.body.preco}`;
+    let query = `INSERT INTO produtos VALUES (DEFAULT, '${req.body.cod}', '${req.body.nome}',${req.body.qntd} ,${req.body.preco})`;
 
-    conDB.query(query, (err, res) => {
+    conDB.query(query, (err, result) => {
         if (err == null) {
-            res.status(201).jason(req.body).end();
+            res.status(201).json(req.body).end();
         } else {
             res.status(400).json(err).end();
         }
