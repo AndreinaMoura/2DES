@@ -1,0 +1,3 @@
+expo init (nome da pasta)
+expo start --web //rodar web
+
