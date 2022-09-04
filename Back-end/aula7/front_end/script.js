@@ -53,14 +53,16 @@ function preencherTabelas() {
             document.querySelector("#corpinho").appendChild(linha);
         }
         // document.querySelector('#slcData').innerHTML += `<option id="l" value="${indice}">${cada.data}</option>`
-        clique(cada.data)
+        data = cada.data
+        clique(data)
         indice++
     })
 }
 function clique(data){
-    if(document.querySelectorAll('#l').value == data){
-
+    var coisa = document.querySelectorAll('#l').value
+    if(coisa == data){
+console.log(coisa)
     } else{
-        
+        console.log(coisa)
     }
 }
