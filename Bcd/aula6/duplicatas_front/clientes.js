@@ -47,7 +47,7 @@ function preencheTabela() {
 function mostraTels(indice) {
     modais.setAttribute("style","display:flex;");
     modalTels.setAttribute("style","display:flex;");
-    // telefones.innerHTML = "";
+    telefones.innerHTML = "";
     clientes[indice].telefones.forEach(e=>{
         let linha = document.createElement("tr");
         let tipo = document.createElement("td");
