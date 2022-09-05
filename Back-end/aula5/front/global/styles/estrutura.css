@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+}
+
+aside {
+    width: 20vw;
+    height: 100vh;
+    background-color: #add8e6;
+}
+
+ul {
+    list-style: none;
+    color: #666;
+}
+
+ul > li{
+    margin: 15px;
+    font-weight: bold;
+}
+
+main {
+    width: 80vw;
+    height: 100vh;
+    padding: 15px;
+}
+
+/* .model {
+    display: none;
+    visibility: hidden;
+} */
