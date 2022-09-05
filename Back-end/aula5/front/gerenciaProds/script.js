@@ -1,59 +1,94 @@
-const produtos = document.querySelector(".produtos");
-const produto = document.querySelector(".produto");
-const modal = document.querySelector(".modal");
+const listaProdutos = document.querySelector("#lista-produtos")
+const linhamodelo = document.querySelector(".linhamodelo");
+const modalExcluir = document.querySelector(".excluir");
+const modalEditar = document.querySelector(".editar");
+
+const inputCodigo = document.querySelector("#codigo");
+const inputNome = document.querySelector("#nome");
+const inputQuantidade = document.querySelector("#quantidade");
+const inputValor = document.querySelector("#valor");
 
 fetch("http://localhost:3000/produtos")
-    .then(resp => { return resp.json() })
+    .then(res => { return res.json() })
     .then(produtos => {
         produtos.forEach(produto => {
-            duplicarProduto(produto);
+            let linha = linhamodelo.cloneNode(true);
+            linha.classList.remove("model");
+
+            let colunas = linha.querySelectorAll("td");
+            colunas[0].innerHTML = produto.cod;
+            colunas[1].innerHTML = produto.nome;
+            colunas[2].innerHTML = produto.qntd;
+            colunas[3].innerHTML = "R$ " + produto.preco;
+
+            linha.querySelector("#exclui").addEventListener("click", () => {
+                modalExcluir.classList.remove("model");
+                modalExcluir.querySelector("#cod").innerHTML = produto.cod;
+            })
+
+            linha.querySelector("#edita").addEventListener("click", () => {
+                modalEditar.classList.remove("model");
+                inputCodigo.value = produto.cod;
+                inputNome.value = produto.nome;
+                inputQuantidade.value = produto.qntd;
+                inputValor.value = produto.preco;
+            })
+
+            listaProdutos.appendChild(linha);
         });
     });
 
-function duplicarProduto(info) {
-    let nProd = produto.cloneNode(true);
-
-    nProd.classList.remove("model");
-
-    nProd.querySelector("#nome").innerHTML = info.nome;
-    nProd.querySelector("#preco").innerHTML = "R$ " + info.preco;
-
-    produtos.appendChild(nProd);
+function fecharModalExcluir() {
+    modalExcluir.classList.add("model");
 }
 
-function showModal(){
-    modal.classList.toggle("model");
+function fecharModalEditar() {
+    modalEditar.classList.add("model");
 }
-function cadastrar(){
-    let cod = document.querySelector("#cod").value;
-    let nome = document.querySelector("#nnome").value;
-    let qntd = document.querySelector("#qntd").value;
-    let preco = document.querySelector("#ppreco").value;
- 
-    let data = JSON.stringify({
-        "cod": cod,
-        "nome": nome,
-        "qntd": qntd,
-        "preco": preco
-    })
-    fetch("http://localhost:3000/produtos",{
-        "method":"POST",
-        "headers":{
+
+function editarProduto() {
+    let produto = {
+        'cod': inputCodigo.value,
+        'nome': inputNome.value,
+        'qntd': inputQuantidade.value,
+        'preco': inputValor.value,
+    }
+    fetch("http://localhost:3000/produto", {
+        "method": "PUT",
+        "headers": {
             "Content-Type": "application/json"
         },
-        "body": data
+        "body": JSON.stringify(produto)
     })
-    .then(resp=>{return resp.json()})
-    .then(data=>{
-        duplicarProduto(data);
-        showModal();
-        limpar();
-    })
+        .then(res => { return res.json() })
+        .then(resp => {
+            if (resp.cod !== undefined) {
+                alert("Produto Alterado com Sucesso!");
+                window.location.reload(); //atualixa a pagina
+            } else {
+                alert("Falha ao Salvar Alterações!");
+            }
+        })
 }
 
-function limpar(){
-    document.querySelector("#cod").value = null;
-    document.querySelector("#nnome").value = null;
-    document.querySelector("#qntd").value = null;
-    document.querySelector("#ppreco").value = null;
+function excluirProduto(){
+    let data = {
+        "cod":document.querySelector("#cod").innerHTML
+    }
+    fetch("http://localhost:3000/produto", {
+        "method": "DELETE",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "body": JSON.stringify(data)
+    })
+        .then(res => { return res.json() })
+        .then(resp => {
+            if (resp.cod !== undefined) {
+                alert("Produto Exclido com Sucesso!");
+                window.location.reload(); //atualixa a pagina
+            } else {
+                alert("Falha ao Excluir Produto!");
+            }
+        })
 }
