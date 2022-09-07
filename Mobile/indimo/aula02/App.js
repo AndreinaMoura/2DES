@@ -38,7 +38,7 @@ export default function App() {
         setRes(op)
       }}>
         <Text style={style.Text2}>Calcular</Text>
-        <TextInput style={style.Text3} value={"Resultado"}>{res}</TextInput>
+         <Text style={style.Text3}>{res}</Text>
       </TouchableOpacity>
 
     </View >
@@ -78,9 +78,9 @@ contem:{
   flexDirection: "row"
 },
 Text3:{
-  padding: '5px',
+  margin: '5px',
   width: '200px',
   textAlign: 'center',
-  padding: "100px"
+  padding: "90px"
 }
 })

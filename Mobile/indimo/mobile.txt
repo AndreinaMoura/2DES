@@ -1,6 +1,6 @@
 expo init (nome da pasta)
+npm create-expo-app (nome da pasta)
 cd (nome da pasta)
 npm i -g expo-cli
 npx expo install react-native-web@~0.18.7 react-dom@18.0.0 @expo/webpack-config@^0.17.0
 expo start --web //rodar web
-aa

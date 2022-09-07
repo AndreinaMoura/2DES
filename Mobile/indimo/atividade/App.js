@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { View, TouchableOpacity, Text, TextInput, StyleSheet } from 'react-native';
 
@@ -9,11 +8,11 @@ export default function App() {
   const [op, setOp] = useState("");
 
   return (
-    
     <View style={style.container}>
       <TextInput style={style.TextInput} value={value} placeholder={"Primeiro Valor"} onChangeText={(valor) => { setValue(valor); }} />
       <TextInput style={style.TextInput} value={value2} placeholder={"Primeiro Valor"} onChangeText={(valor2) => { setValue2(valor2); }} />
-      <View style={style.contem}>
+      
+        <View style={style.contem}>
         <TouchableOpacity onPress={() => {
         setOp(Number(value) + Number(value2));
       }}>
@@ -34,11 +33,15 @@ export default function App() {
       }}>
         <Text style={style.Text}>*</Text>
       </TouchableOpacity>
-      
         </View>
-        
-      <StatusBar style="auto" />
-    </View>
+      <TouchableOpacity onPress={() => {
+        setRes(op)
+      }}>
+        <Text style={style.Text2}>Calcular</Text>
+        <TextInput style={style.Text3} value={"Resultado"}>{res}</TextInput>
+      </TouchableOpacity>
+
+    </View >
   );
 }
 
@@ -78,5 +81,6 @@ Text3:{
   padding: '5px',
   width: '200px',
   textAlign: 'center',
+  // padding: "100px"
 }
 })
