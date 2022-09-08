@@ -13,7 +13,8 @@ create table lancamentos(
 describe lancamentos;
 show tables;
 
-LOAD DATA INFILE 'C:/Users/Andreina/Desktop/logic2/Back-end/aula7/back_end/src/lancamentos.csv'
+-- LOAD DATA INFILE 'C:/Users/Andreina/Desktop/logic2/Back-end/aula7/back_end/src/lancamentos.csv'
+LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/logic2/Back-end/aula7/back_end/src/lancamentos.csv'
 INTO TABLE lancamentos
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'

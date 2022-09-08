@@ -5,6 +5,7 @@ const mysql = require("mysql");
 
 const app = express();
 app.use(cors());
+app.use(express.json());
 
 const con = mysql.createConnection({
     user: 'root',
@@ -17,6 +18,17 @@ app.get('/livrocaixa/lancamentos',(req,res)=>{
     con.query(string,(err,result)=>{
         if(err == null){
             res.json(result);
+        }
+    });
+});
+
+app.post('/livrocaixa/lancamentos',(req,res)=>{
+    let query = `insert into lancamentos values (default, '${req.body.data}', '${req.body.desDriDao}', ${req.body.valor}, '${req.body.tipo}')`;
+    con.query(query, (err, result) => {
+        if(err == null) {
+            res.status(201).json(req.body).end();
+        }else {
+            res.status(400).json(err).end();
         }
     });
 });
