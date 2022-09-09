@@ -5,7 +5,6 @@ const mysql = require("mysql");
 
 const app = express();
 app.use(cors());
-app.use(express.json());
 
 const con = mysql.createConnection({
     user: 'root',
@@ -22,6 +21,7 @@ app.get('/livrocaixa/lancamentos',(req,res)=>{
     });
 });
 
+<<<<<<< Updated upstream:Back-end/aula7/back/index.js
 app.post('/livrocaixa/lancamentos',(req,res)=>{
     let query = `insert into lancamentos values (default, curdate(), '${req.body.desDriDao}', ${req.body.valor}, '${req.body.tipo}')`;
     con.query(query, (err, result) => {
@@ -42,6 +42,8 @@ app.get('/livrocaixa/lancamentos/:data',(req,res)=>{
     });
 });
 
+=======
+>>>>>>> Stashed changes:Back-end/aula7/back_end/index.js
 app.listen(3000, () => {
     console.log("Respondendo na porta 3000");
 });
