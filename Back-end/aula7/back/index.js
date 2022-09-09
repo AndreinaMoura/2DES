@@ -23,12 +23,21 @@ app.get('/livrocaixa/lancamentos',(req,res)=>{
 });
 
 app.post('/livrocaixa/lancamentos',(req,res)=>{
-    let query = `insert into lancamentos values (default, '${req.body.data}', '${req.body.desDriDao}', ${req.body.valor}, '${req.body.tipo}')`;
+    let query = `insert into lancamentos values (default, curdate(), '${req.body.desDriDao}', ${req.body.valor}, '${req.body.tipo}')`;
     con.query(query, (err, result) => {
         if(err == null) {
             res.status(201).json(req.body).end();
         }else {
             res.status(400).json(err).end();
+        }
+    });
+});
+
+app.get('/livrocaixa/lancamentos/:data',(req,res)=>{
+    let string = `select * from lancamentos where = ${req.params.data}`;
+    con.query(string,(err,result)=>{
+        if(err == null){
+            res.json(result);
         }
     });
 });
