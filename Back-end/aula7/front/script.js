@@ -69,11 +69,11 @@ function preencherTabelas() {
 }
 
 function datas() {
-    fetch(`http://localhost:3000/livrocaixa/lancamentos/${document.querySelector('.op').value}`)
+    fetch(`http://localhost:3000/livrocaixa/lancamentos/${document.querySelector('#slcData').value}`)
         .then(res => { return res.json() })
         .then(resp => {
             resp.forEach(cada => {
-
+                console.log('ok')
                 if (cada.tipo == 'D') {
                     linha = document.createElement("tr");
                     n_lanDamento = document.createElement("td");
