@@ -28,33 +28,35 @@ function preencherTabelas() {
     dd.forEach(cada => {
 
         if (cada.data_devolucao != "") {
+
             linha = document.createElement("tr");
             id = document.createElement("td");
             codigo_cli = document.createElement("td");
             codigo_filme = document.createElement("td");
             data_locacao = document.createElement("td");
             data_devolucao = document.createElement("td");
-            id.innerHTML = cada.id;
             codigo_cli.innerHTML = cada.codigo_cli;
             codigo_filme.innerHTML = cada.codigo_filme;
             data_locacao.innerHTML = cada.data_locacao;
             data_devolucao.innerHTML = cada.data_devolucao;
-            linha.append(id, codigo_cli, codigo_filme, data_locacao, data_devolucao);
+            linha.append(codigo_cli, codigo_filme, data_locacao, data_devolucao);
             document.querySelector("#corpo").appendChild(linha);
+
         } else{
+
             linha = document.createElement("tr");
             id = document.createElement("td");
             codigo_cli = document.createElement("td");
             codigo_filme = document.createElement("td");
             data_locacao = document.createElement("td");
             data_devolucao = document.createElement("td");
-            id.innerHTML = cada.id;
             codigo_cli.innerHTML = cada.codigo_cli;
             codigo_filme.innerHTML = cada.codigo_filme;
             data_locacao.innerHTML = cada.data_locacao;
             data_devolucao.innerHTML = "Pendente";
-            linha.append(id, codigo_cli, codigo_filme, data_locacao, data_devolucao);
+            linha.append(codigo_cli, codigo_filme, data_locacao, data_devolucao);
             document.querySelector("#corpinho").appendChild(linha);
+            
         }
     })
 }
