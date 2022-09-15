@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.novo-funcionario {
+    width: 70vw;
+    height: 10vh;
+    border: 1px solid gray;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px;
+    padding: 0 15px;
+}
+
+#img {
+    height: 5vh;
+}
+
+#image {
+    height: 5vh;
+    border-radius: 100%;
+}
+
+#imagenzinha{
+    height: 5vh;
+    border-radius: 100%;
+}
+
+.modelo {
+    visibility: hidden;
+    display: none;
+}

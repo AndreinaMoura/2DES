@@ -1,0 +1,16 @@
+nome de pasta snake_case
+
+Node
+source scr usa camelCase
+
+npm intall -> atuliza o projeto
+npm intall --global / npm intall -g -> atuliza todo o projeto
+yarn - mesma coisa
+
+URL -> envia pelo get
+
+simulador de font-end:
+postman
+insomnia
+
+template string `${''}`

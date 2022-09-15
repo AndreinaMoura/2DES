@@ -1,0 +1,34 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.corpinho{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+    width: 20vw;
+    background-color: lightblue;
+    border-radius: 50px;
+    margin: 50px;
+    
+}
+.modelo{
+    display: none;
+    visibility: hidden;
+}
+#quaseCorpinho{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+#header{
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+}
+#header p{
+    cursor: pointer;
+}

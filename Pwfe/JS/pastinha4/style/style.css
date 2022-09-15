@@ -1,0 +1,81 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #f5f5f5;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+}
+
+#valPlaca {
+    border: 1px solid black;
+    width: inherit;
+    height: 50px;
+    text-align: center;
+    background-color: white;
+}
+
+#valCpf {
+    border: 1px solid black;
+    width: inherit;
+    height: 50px;
+    text-align: center;
+    background-color: white;
+}
+
+#valTel {
+    border: 1px solid black;
+    width: inherit;
+    height: 50px;
+    margin-top: 10px;
+    overflow: auto;
+    text-align: center;
+    background-color: white;
+}
+
+#input {
+    border: 1px solid black;
+    width: inherit;
+    height: 50px;
+    overflow: auto;
+    text-align: center;
+    background-color: white;
+}
+
+#c {
+    display: grid;
+    margin: 10px;
+}
+
+#quantia {
+    width: 225px;
+    margin-bottom: 3px;
+}
+
+#dd {
+    width: 225px;
+    margin-bottom: 3px;
+}
+
+button {
+    height: 30px;
+}
+
+input {
+    height: 20px;
+}
+
+#divizinha {
+    margin-top: 5px;
+}

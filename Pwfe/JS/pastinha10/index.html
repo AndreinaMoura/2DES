@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cadastro</title>
+</head>
+
+<body>
+    <div>
+        <h1>Cadastro</h1>
+        <p>Nome:
+            <input type="text" name="" id="nomeUser">
+        </p>
+        <p>Email:
+            <input type="text" name="" id="emailUser">
+        </p>
+        <div>
+            <p>Senha:
+                <input type="text" name="" id="senhaUser">
+                <img id="some" src="" alt="">
+            </p>
+            <p>Repetir senha:
+                <input type="text" name="" id="repetirSenhaUser">
+            <img id="some" src="" alt="">
+            </p>
+        </div>
+        <p id="sumir" style="color: red;">As senhas não correspondem</p>
+        <p>Telefone:
+            <input type="text" name="" id="telefone">
+        </p>
+        <p>CEP:
+            <input type="text" name="" id="cep" onBlur="buscar()">
+        </p>
+        <p>Logadouro:
+            <input type="text" name="" id="rua" disabled>
+        </p>
+        <p>Complemento:
+            <input type="text" name="" id="complemento">
+        </p>
+        <p>Bairro:
+            <input type="text" name="" id="bairro" disabled>
+        </p>
+        <p>Cidade:
+            <input type="text" name="" id="cidade" disabled>
+        </p>
+        <p>Estado:
+            <input type="text" name="" id="uf" disabled>
+        </p>
+        <div>
+            <button onclick="cadastrar()">Cadastrar</button>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
