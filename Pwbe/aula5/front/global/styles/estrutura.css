@@ -97,20 +97,20 @@ input {
     margin-top: 10px;
 }
 
-.cadastrar{
+.cadastrar {
     display: flex;
     align-items: center;
     padding: 10px 15px;
     border-radius: 5px;
-    margin-bottom: 20px;
     border: 1px solid #2fd659;
+    margin-bottom: 20px;
 }
 
-.cadastrar:hover{
-    color: #fff;
+.cadastrar:hover {
+    color:  #fff;
     background-color: #2fd659;
 }
 
-.cadastrar > img{
-    margin-left: 10px 15px;
+.cadastrar > img {
+    margin-left: 10px;
 }

@@ -1,0 +1,1 @@
+{"ast":null,"code":"export default function App() {\n  return;\n}","map":{"version":3,"names":["App"],"sources":["C:/Users/Desenvolvimento/Desktop/logic2/Mobile/indimo/aula01/App.js"],"sourcesContent":["\n\nexport default function App() {\n  return\n}"],"mappings":"AAEA,eAAe,SAASA,GAAT,GAAe;EAC5B;AACD"},"metadata":{},"sourceType":"module"}

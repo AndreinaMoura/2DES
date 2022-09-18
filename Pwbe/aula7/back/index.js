@@ -33,7 +33,7 @@ app.post('/livrocaixa/lancamentos',(req,res)=>{
 });
 
 app.get('/livrocaixa/lancamentos/:data',(req,res)=>{
-    let string = `select * from lancamentos where = ${req.params.data}`;
+    let string = `select * from lancamentos where data = "${req.params.data}"`;
     con.query(string,(err,result)=>{
         if(err == null){
             res.json(result);

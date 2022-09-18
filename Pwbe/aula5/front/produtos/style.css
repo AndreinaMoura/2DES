@@ -1,37 +1,38 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.produto{
-    border: 1px solid #f5f5;
+
+.produto {
+    border: 1px solid #F5F5;
     border-radius: 20px;
     width: 150px;
     padding: 30px;
     margin: 15px;
 }
 
-.model{
+.model {
     display: none;
     visibility: hidden;
 }
 
-.modal{
+.modal {
     display: flex;
     align-items: center;
     justify-content: center;
     position: fixed;
-    top:0;
+    top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
     background-color: rgba(0,0,0,.5);
 }
 
-.form-modal{
+.form-modal {
     width: 50%;
     height: 50%;
-    background-color: #fff;
+    background-color: #FFF;
     border-radius: 30px;
     position: relative;
     display: flex;
@@ -39,14 +40,12 @@
     padding: 60px 120px;
 }
 
-.form-modal input{
+.form-modal > input , button{
     margin: 15px 0;
 }
 
-#cancelar{
+#cancel {
     position: absolute;
     top: 20px;
     right: 20px;
-    color: red;
-    border: none;
 }
