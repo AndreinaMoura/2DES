@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../assets/logo.png" type="image/x-icon">
+    <title>Estacionamento</title>
+</head>
+<body onLoad="carregar()">
+    <div class="modal cadastrar model">
+        <div class="modal-content">
+            <button onClick="fecharModal()"> <img class="icone" src="https://cdn.icon-icons.com/icons2/1674/PNG/512/close_111152.png" alt="Icone de Fechar">
+            </button>
+            <div class="modal-content-body">
+                <input type="text" id="inputNome" placeholder="Nome">
+                <input type="text" id="inputTelefone" placeholder="Telefone">
+                <input type="text" id="inputEndereco" placeholder="Endereço">
+            </div>
+            <div class="modal-content-footer">
+                <button onClick="cadastrar()" class="btn confirm">Cadastrar</button>
+                <button onClick="fecharModal()" class="btn cancel">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <a href="../clientes/index.html">Clientes</a>
+        <a href="../vagas/index.html">Vagas</a>
+        <a href="../entradas/index.html">Entradas</a>
+    </header>
+    <h2>Clientes</h2>
+ <button onClick="abrirModalCadastro()" class="btnCad">Cadastrar cliente</button>
+<main>
+ <table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>Endereço</th>
+        </tr>
+    </thead>
+    <tbody id="corpo">
+    </tbody>
+ </table>   
+</main>
+</body>
+<script src="script.js"></script>
+</html>
