@@ -1,0 +1,116 @@
+entrar no vscode: cmd
+
+C:\Users\Desenvolvimento\Desktop\logic2\Bcd\pasta>cd \
+
+C:\>cd xampp
+
+C:\xampp>cd mysql
+
+C:\xampp\mysql>cd bin
+
+C:\xampp\mysql\bin>mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 4
+Server version: 10.1.25-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2017, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> -- comentário
+MariaDB [(none)]> -- Exclui o banco se existir e cria um novo com o padrão utf8 de
+caracteres
+MariaDB [(none)]> drop database if exists pedidos;
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+MariaDB [(none)]>
+MariaDB [(none)]> create database pedidos charset = UTF8 collate utf8_general_ci;
+Query OK, 1 row affected (0.00 sec)
+
+MariaDB [(none)]>
+MariaDB [(none)]> use pedidos;
+Database changed
+MariaDB [pedidos]>
+MariaDB [pedidos]> create table clientes(
+    ->     -- cpf varchar(11) not null primary key
+    ->     id_cliente integer not null primary key auto_increment,
+    ->     pri_nome varchar(20) not null,
+    ->     sobrenome varchar(20) not null,
+    ->     endereco varchar(100) not null
+    -> );
+Query OK, 0 rows affected (0.20 sec)
+
+MariaDB [pedidos]>
+MariaDB [pedidos]> show tables;
++-------------------+
+| Tables_in_pedidos |
++-------------------+
+| clientes          |
++-------------------+
+1 row in set (0.00 sec)
+
+MariaDB [pedidos]> describe clientes;
++------------+--------------+------+-----+---------+----------------+
+| Field      | Type         | Null | Key | Default | Extra          |
++------------+--------------+------+-----+---------+----------------+
+| id_cliente | int(11)      | NO   | PRI | NULL    | auto_increment |
+| pri_nome   | varchar(20)  | NO   |     | NULL    |                |
+| sobrenome  | varchar(20)  | NO   |     | NULL    |                |
+| endereco   | varchar(100) | NO   |     | NULL    |                |
++------------+--------------+------+-----+---------+----------------+
+4 rows in set (0.01 sec)
+
+MariaDB [pedidos]> -- comentário
+MariaDB [pedidos]> -- Exclui o banco se existir e cria um novo com o padrão utf8 de caracteres
+MariaDB [pedidos]> drop database if exists pedidos;
+Query OK, 1 row affected (0.22 sec)
+
+MariaDB [(none)]>
+MariaDB [(none)]> create database pedidos charset = TF8 collate utf8_general_ci;
+Query OK, 1 row affected (0.00 sec)
+
+MariaDB [(none)]>
+MariaDB [(none)]> use pedidos;
+Database changed
+MariaDB [pedidos]> -- DDL Criação da estrutura do Banco de Dados
+MariaDB [pedidos]> create table clientes(
+    ->     -- cpf varchar(11) not null primary key
+    ->     id_cliente integer not null primary key auto_increment,
+    ->     pri_nome varchar(20) not null,
+    ->     sobrenome varchar(20) not null,
+    ->     endereco varchar(100) not null
+    -> );
+Query OK, 0 rows affected (0.14 sec)
+
+MariaDB [pedidos]>
+MariaDB [pedidos]> show tables;
++-------------------+
+| Tables_in_pedidos |
++-------------------+
+| clientes          |
++-------------------+
+1 row in set (0.00 sec)
+
+MariaDB [pedidos]> describe clientes;
++------------+--------------+------+-----+---------+----------------+
+| Field      | Type         | Null | Key | Default | Extra          |
++------------+--------------+------+-----+---------+----------------+
+| id_cliente | int(11)      | NO   | PRI | NULL    | auto_increment |
+| pri_nome   | varchar(20)  | NO   |     | NULL    |                |
+| sobrenome  | varchar(20)  | NO   |     | NULL    |                |
+| endereco   | varchar(100) | NO   |     | NULL    |                |
++------------+--------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+MariaDB [pedidos]>
+
+
+
+
+o diagrama conceitual é mais perto das solução do problena e do usuario
+e o lógico mais perto do desenvolvimento
+
+ferramentas case fazem: gerar modelo lógico/sql
+
+
+npm i express cors mysql

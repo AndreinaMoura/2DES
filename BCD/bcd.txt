@@ -1,0 +1,27 @@
+tipos de dados:
+não estruturado (não possui uma norma específica)
+semi estruturado (possui normas flexíveis)
+estruturado (possui norma rígida)
+
+relacional/não relacional
+	
+	-DDL desenvolvimento (create, alterate, drop, show)
+	-DML manipulação (insert, update, delete, select)
+sql{	-DQL pesquisa/query (select)
+	-DCL controle de acesso ()
+	-DTL transação
+	
+	
+SGBD (sistema gerenciador de banco de dados):
+mongoDB - estruturado, NoSQL,relacional
+mariaDB - estruturado, SQL,relacional
+oracle - estruturado, SQL,relacional
+SQL-Server -estruturado, SQL,relacional
+firebase - estruturado, SQL, não relacional
+
+client - cliente
+customer - freguês
+
+.xml é tipo html com bd (é lindo)
+
+normalização (BD - estruturado, SQL e relacionais)

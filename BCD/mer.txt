@@ -1,0 +1,18 @@
+MER - modelo entidade relacionamento. (modelo pode ser desenhado ou escrito)
+DER - diagrama de entidade relacionamento (é um MER desenhado)
+
+modelo conceitual (proximo a solução, usuario)
+modelo lógico (proximo a implementaçao, codigo)
+
+               ____________________
+              |                    *
+funcionario (1-1) -> <possui> -> (1-0) conjuge
+              *____________________|
+
+leitura ao contrario (1 fun possui 1/0 conjuge e 1 cojuge possui 1/1 fun)
+
+PK-primary key(id_clie)               _________        ________        _________
+FK-foreing key(id_clie)(id_prod)      |cliente| 1 -> n |pedido| n -> 1 |produto| 
+PK-primary key(id_prod)               ---------        --------        ---------
+
+
