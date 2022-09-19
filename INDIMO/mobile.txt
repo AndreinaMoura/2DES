@@ -1,0 +1,19 @@
+expo init (nome da pasta)
+npm create-expo-app (nome da pasta)
+cd (nome da pasta)
+npm i -g expo-cli
+npx expo install react-native-web@~0.18.7 react-dom@18.0.0 @expo/webpack-config@^0.17.0
+expo start --web //rodar web
+
+npm i -g yarn
+yarn add @react-navigation/native yarn add v1.22.19
+yarn add react-native-screens react-native-safe-area-context
+yarn add @react-navigation/native-stack
+
+
+barra de rolagem
+position: fixed; left: 0px; top: 0px; width: 0px; height: 0px; z-index: -1;
+overflow: hidden; visibility: hidden; transition-duration: 0.05s; 
+transition-property: padding; transition-delay: 0s; 
+padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inset-bottom); 
+padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right);
