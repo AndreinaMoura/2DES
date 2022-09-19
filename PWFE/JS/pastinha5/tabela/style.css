@@ -1,0 +1,12 @@
+.dv{
+    text-align: center;
+}
+.dd{
+    padding: 5px;
+}
+table{
+    border-collapse: collapse;
+}
+th, td{
+    border: 1px solid black;
+}

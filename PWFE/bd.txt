@@ -1,0 +1,31 @@
+tipos de bancos de dados:
+não estruturados (.txt .docx .pdf)
+semi estruturados - formato de tabela (.xlsx .csv .json)
+estruturados {SQL		não SQL
+	      DDL		chave-valor
+	      DML		tabelas
+	      DCL
+	      relacional	nao relacional}
+
+arquivo csv - semi estruturado, não SQL, não relacional
+excel - semi estruturado, não SQL, não relacional
+powerBI - estruturado, não SQL, relacional
+fire base - estruturado, não SQL, não relacional
+mysql - estruturado, SQL, relacional
+access - estruturado, SQL, relacional
+oracle - estruturado, SQL, relacional
+SQL server - estruturado, SQL, relacional
+db2 - estruturado, SQL, relacional
+mongo db - estruturado, não SQL, relacional
+
+dado(bruto)  -> informação(decisão) -> conhecimento(ensino) -> inteligência(lucro)
+
+estrutura
+tabela entidade(retângulo)
+relacionamentos(quadrado)-> cardinais-simples{1-n,n-1,1-1,n-n
+				     \
+				      min-max{ (0 n)(0 1), (01)(0n), (1 n)(n 1), (n1)(1n)...
+
+der -> diagrama entidade relacionamento
+sgbd-> sistema gerenciador banco dados
+dados sobre os dados é metadata(banco de dados mysql)

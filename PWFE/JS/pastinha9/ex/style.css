@@ -1,0 +1,25 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#ptzinho {
+    display: flex;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+
+}
+.divisinha{
+    display: flex;
+    flex-direction: column;
+    /* width: 200px; */
+    justify-content: center;
+    align-items: center;
+    /* margin-left: 150px; */
+}

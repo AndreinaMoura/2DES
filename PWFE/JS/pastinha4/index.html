@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 1 - Exercícios</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <main>
+        <!-- placa -->
+        <div id="c">
+            <h3>Placa: </h3>
+            <input type="text" id="placa">
+            <button id="btValidaPlaca" onClick="ex1()">Validar Placa</button>
+            <h2 id="retorno"></h2>
+        </div>
+
+
+        <!-- validos -->
+        <div id="c">
+            <h3>CPF válido: </h3>
+            <input type="text" id="cpf">
+            <button id="btValidaCpf" onClick="ex2()">Validar CPF</button>
+            <h2 id="retornoCpf"></h2>
+        </div>
+
+
+        <!-- telefone -->
+        <div id="c">
+            <h3>Digite quantos números de telefones deseja criar e o DDD: </h3>
+            <div id="divizinha">
+                <input type="text" placeholder="DDD" id="dd">
+                <input type="text" placeholder="0" id="quantia">
+            </div>
+            <button onClick="geraTelefones()">Gerar telefones</button>
+            <h2 id="valTel"></h2>
+            <p></p>
+        </div>
+
+
+        <!-- aleatorio -->
+        <div id="c">
+            <h3>Digite quantos CPFs deseja criar: </h3>
+            <input type="text" id="quanto" placeholder="0">
+            <button onClick="cpfAleatorio()">Criar</button>
+            <div id="input"></div>
+        </div>
+    </main>
+</body>
+<script src="script.js"></script>
+
+</html>
