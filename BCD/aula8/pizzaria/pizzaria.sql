@@ -644,6 +644,68 @@ select * from Telefones;
 select * from Pedidos;
 select * from Itens_Pedido;
 
+describe Pedidos;
+describe Itens_Pedido;
+describe Pizzas;
+
 -- Mostrar todas as tabelas no fim do script
 show tables;
 
+-- Exercícios (lista1)
+-- Qual o telefone do cliente "Cesar Augusto Pascali Rago"?
+-- Quantos telefones ele possui cadastrado?
+-- Através de comandos SQL/DML Remova os demais telefones e cadastre apenas o novo telefone 19991865503
+-- Crie uma view que mostre os clientes e telefones juntos, coloque o nome de "vw_clientes"
+-- Acrescente um novo cliente "Joaquim Inácio Silva", um endereço qualquer, telefone 19989995511 que pediu 2 pizzas (uma baiana e uma de atum)
+
+select Cliente_id from Clientes where nome = 'Cesar Augusto Pascali Rago'; -- 12
+select telefone from Telefones where Cliente_id = 12;
+select count(*)  as telefone from Telefones where Cliente_id = (select Cliente_id from Clientes where nome = 'Cesar Augusto Pascali Rago');
+delete from Telefones where Cliente_id = 12;
+insert into Telefones value (12,19991865503);
+create view vw_clientes as
+select c.Cliente_id, c.nome, c.logradouro, c.numero, c.complemento, c.bairro, c.referencia, t.Telefone as Telefones
+from Clientes c 
+INNER JOIN Telefones t
+ON c.Cliente_id = t.cliente_id;
+insert into Clientes(nome, logradouro, numero, complemento, bairro, referencia) value('Joaquim Inácio Silva',"Rua Adelcio Biazi",260,"","Zambom","");
+insert into Telefones value(last_insert_id(),19989995511);
+insert into Pedidos(cliente_id, data, hora) values((select Cliente_id from Clientes where nome = 'Joaquim Inácio Silva'),DATE_SUB(curdate(),INTERVAL 5 DAY),"17:02:00");
+select pedido_id from Pedidos where Cliente_id = (select Cliente_id from Clientes where nome = 'Joaquim Inácio Silva'); -- 27 
+select pizza_id from pizzas where nome like '%baiana%';
+select pizza_id from pizzas where nome like '%atum%';
+insert into Itens_Pedido(pedido_id, pizza_id, quantidade, valor) values((select pedido_id from Pedidos where Cliente_id = (select Cliente_id from Clientes where nome = 'Joaquim Inácio Silva')),(select pizza_id from pizzas where nome like '%baiana%';),1, (select valor from Pizzas where pizza_id = 5));
+insert into Itens_Pedido(pedido_id, pizza_id, quantidade, valor) values((select pedido_id from Pedidos where Cliente_id = (select Cliente_id from Clientes where nome = 'Joaquim Inácio Silva')),select pizza_id from pizzas where nome like '%atum%';,1, (select valor from Pizzas where pizza_id = 6));
+
+-- Exercícios (lista2)
+-- Quando foi o último pedido do cliente "Cesar Augusto Pascali Rago"? Qual o valor deste pedido?
+-- Quantas pizzas ele pediu e quantos sabores diferentes
+-- Crie uma view da tabela Itens_pedido que mostre também o nome de cada pizza em ordem de pedido_id, coloque o nome de "vw_itens"
+-- Crie uma view que mostre por ordem de pedido os dados (pedido_id, cliente_id, data, hora, pizza_id, nome da pizza, valor da pizza, subtotal e total), nomeie como "vw_pedidos"
+-- Acrescente na view anterior o nome do cliente e mostre na ordem de pedido decrescente.
+
+select * from Pedidos where Cliente_id = 12;
+select * from Itens_Pedido where pedido_id = 22;
+
+create view vw_itens as
+
+
+create view vw_pedidos as 
+select p.pedido_id, p.cliente_id, p.data, p.hora, pz.pizza_id, pz.nome as 'Nome da Pizza', i.valor as 'Valor da Pizza',(i.valor * i.quantidade) as 'Subtotal', p.valor as 'Total'
+from Itens_Pedido i
+inner JOIN Pizzas pz
+on i.pizza_id=pz.pizza_id
+inner JOIN Pedidos p
+on i.pedido_id=p.pedido_id;
+
+create view vw_pedidos as 
+select p.pedido_id, p.cliente_id, c.nome as 'Nome do Cliente', p.data, p.hora, pz.pizza_id, pz.nome as 'Nome da Pizza', i.valor as 'Valor da Pizza',(i.valor * i.quantidade) as 'Subtotal', p.valor as 'Total'
+from Itens_Pedido i
+inner JOIN Pizzas pz
+on i.pizza_id=pz.pizza_id
+inner JOIN Pedidos p
+on i.pedido_id=p.pedido_id
+inner JOIN Clientes c
+on c.cliente_id=p.cliente_id;
+
+select * from vw_pedidos order by id_pedidos desc;
