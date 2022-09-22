@@ -6,7 +6,8 @@ npx expo install react-native-web@~0.18.7 react-dom@18.0.0 @expo/webpack-config@
 expo start --web //rodar web
 
 npm i -g yarn
-yarn add @react-navigation/native yarn add v1.22.19
+yarn add @react-navigation/native 
+yarn add v1.22.19
 yarn add react-native-screens react-native-safe-area-context
 yarn add @react-navigation/native-stack
 
