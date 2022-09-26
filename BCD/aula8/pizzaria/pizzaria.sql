@@ -686,20 +686,20 @@ insert into Itens_Pedido(pedido_id, pizza_id, quantidade, valor) values((select 
 
 select * from Pedidos where Cliente_id = 12;
 select * from Itens_Pedido where pedido_id = 22;
+select sum(quantidade)  from Itens_Pedido where pedido_id = 22;
+select pizza_id  from Itens_Pedido where pedido_id = 22;
+select nome from Pizzas where pizza_id = (select pizza_id  from Itens_Pedido where pedido_id = 22);
 
-create view vw_itens as
+create view vw_itens as 
+select i.pedido_id,  i.pizza_id, pz.nome as 'Nome da Pizza', i.quantidade, i.valor as 'Valor da Pizza'
+from Itens_Pedido i
+inner JOIN Pizzas pz
+on i.pizza_id=pz.pizza_id;
 
+select * from vw_itens order by pedido_id;
 
 create view vw_pedidos as 
 select p.pedido_id, p.cliente_id, p.data, p.hora, pz.pizza_id, pz.nome as 'Nome da Pizza', i.valor as 'Valor da Pizza',(i.valor * i.quantidade) as 'Subtotal', p.valor as 'Total'
-from Itens_Pedido i
-inner JOIN Pizzas pz
-on i.pizza_id=pz.pizza_id
-inner JOIN Pedidos p
-on i.pedido_id=p.pedido_id;
-
-create view vw_pedidos as 
-select p.pedido_id, p.cliente_id, c.nome as 'Nome do Cliente', p.data, p.hora, pz.pizza_id, pz.nome as 'Nome da Pizza', i.valor as 'Valor da Pizza',(i.valor * i.quantidade) as 'Subtotal', p.valor as 'Total'
 from Itens_Pedido i
 inner JOIN Pizzas pz
 on i.pizza_id=pz.pizza_id
@@ -708,4 +708,4 @@ on i.pedido_id=p.pedido_id
 inner JOIN Clientes c
 on c.cliente_id=p.cliente_id;
 
-select * from vw_pedidos order by id_pedidos desc;
+select * from vw_pedidos order by pedido_id desc;
