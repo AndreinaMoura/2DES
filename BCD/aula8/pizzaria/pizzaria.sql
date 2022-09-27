@@ -709,3 +709,12 @@ inner JOIN Clientes c
 on c.cliente_id=p.cliente_id;
 
 select * from vw_pedidos order by pedido_id desc;
+
+alter table Clientes add cpf varchar(15);
+alter table Clientes drop cpf;
+alter table Clientes add cpf varchar(15)  after cliente_id;
+create index i_nome on dados_cli(nome);
+
+select nome from dados_cli into outFile; -- 'd:/nomes.txt'
+
+
