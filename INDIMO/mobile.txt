@@ -10,6 +10,8 @@ yarn add @react-navigation/native
 yarn add react-native-screens react-native-safe-area-context
 yarn add @react-navigation/native-stack
 
+yarn add @react-native-async-storage/async-storage
+
 
 barra de rolagem
 position: fixed; left: 0px; top: 0px; width: 0px; height: 0px; z-index: -1;
@@ -17,3 +19,8 @@ overflow: hidden; visibility: hidden; transition-duration: 0.05s;
 transition-property: padding; transition-delay: 0s; 
 padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inset-bottom); 
 padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right);
+
+
+- wordpress
+- react
+- spring
