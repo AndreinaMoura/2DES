@@ -717,4 +717,34 @@ create index i_nome on dados_cli(nome);
 
 select nome from dados_cli into outFile; -- 'd:/nomes.txt'
 
+drop procedure if exists insere_dados;
+delimiter //
+create procedure insere_dados()
+	begin
+	declare erro_sql tinyint default false;
+	declare continue handler for sqlexception set erro_sql = true;
+	start transaction;
+		insert into Pedidos values
+			(default, last_insert_id(), curdate(), curtime(), null);
+		select * from Pedidos;
+		insert into Itens_Pedido values
+		(last_insert_id(), 6, 2, (select valor from Pizzas where pizza_id = 6)),
+		(last_insert_id(), 8, 3, (select valor from Pizzas where pizza_id = 8)),
+		(last_insert_id(), 7, 1, (select valor from Pizzas where pizza_id = 7));
+		update Pedidos set valor=(select sum(quantidade * valor) from Itens_Pedido where pedido_id = last_insert_id()) where pedido_id = last_insert_id();
+		select * from Itens_Pedido;
+	if erro_sql = false then
+			commit;
+			select 'Transação efetivada com sucesso' as Resultado;
+		else
+			rollback;
+			select 'Erro na transação' as Resultado;
+		end if;
+end//
+delimiter ;
+
+call insere_dados();
+
+select * from dados_clientes;
+
 
