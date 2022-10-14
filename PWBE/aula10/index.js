@@ -1,13 +1,15 @@
 require('dotenv').config();
 const PORT = process.env.PORT || 3000
-const express = require();
-const cors = require();
-const app = express();
-app.use(express.json())
-    .use(cors())
-    .listen(PORT, () => {
-        console.log("respondendo na porta " + PORT);
-    });
+const express = require('express');
+const cors = require('cors');
+
+const app = express()
+    .use(express.json())
+    .use(cors());
+
+app.listen(PORT, () => {
+    console.log("Servidor em execução na porta " + PORT);
+});
 
 // dotenv import
-// npm i cors mysql nodemon dotenv
+// npm i  mysql cors nodemon express dotenv
