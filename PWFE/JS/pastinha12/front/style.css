@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+}
+
+.corpinho {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    width: 50vw;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+#ids {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* .modelo{
+    display: none;
+    visibility: hidden;
+} */
+
+#img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+}
