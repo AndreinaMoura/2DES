@@ -13,6 +13,7 @@ yarn add @react-navigation/native-stack
 yarn add @react-native-async-storage/async-storage
 
 
+
 barra de rolagem
 position: fixed; left: 0px; top: 0px; width: 0px; height: 0px; z-index: -1;
 overflow: hidden; visibility: hidden; transition-duration: 0.05s; 
